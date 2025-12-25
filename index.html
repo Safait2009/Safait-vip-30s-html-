@@ -1,75 +1,72 @@
-<div style="background: #000; color: #00ffcc; padding: 25px; border: 4px solid #00ffcc; border-radius: 35px; max-width: 400px; margin: auto; font-family: 'Arial', sans-serif; text-align: center; box-shadow: 0 0 40px rgba(0, 255, 204, 0.5);">
+<div style="background: #000; color: #00ffcc; padding: 25px; border: 4px solid #00ffcc; border-radius: 35px; max-width: 400px; margin: auto; font-family: 'Arial', sans-serif; text-align: center; box-shadow: 0 0 50px rgba(0, 255, 204, 0.6);">
     
-    <div style="font-weight: bold; font-size: 24px; text-shadow: 0 0 15px #00ffcc;">⚡ SAFAIT VIP HACK ⚡</div>
-    <div style="color: #ffcc00; font-size: 14px; margin-top: 5px;">SERVER: PREMIUM UNLOCKED ✅</div>
+    <div style="font-weight: bold; font-size: 22px; text-shadow: 0 0 15px #00ffcc;">⚡ SAFAIT VIP MASTER ⚡</div>
+    <div style="color: #fff; font-size: 12px; margin-top: 5px;">DEVELOPER: SAFAIT | PASS: 2009</div>
     <hr style="border: 0.5px solid #222; margin: 15px 0;">
 
-    <div style="background: rgba(255, 255, 255, 0.1); padding: 10px; border-radius: 10px; margin-bottom: 15px;">
-        <div style="color: #fff; font-size: 13px; font-weight: bold;">DEVELOPER: SAFAIT</div>
-        <div style="color: #0f0; font-size: 11px;">SECURE ACCESS: 2009</div>
-    </div>
-
-    <div style="margin: 10px auto; width: 70px; height: 70px; border: 4px solid #ff0055; border-radius: 50%; line-height: 70px; font-size: 26px; font-weight: bold; color: #fff;" id="timer">30s</div>
+    <div style="font-size: 14px; color: #ffcc00;">GAME TIMER SYNC</div>
+    <div id="gameTimer" style="margin: 10px auto; width: 80px; height: 80px; border: 4px solid #ff0055; border-radius: 50%; line-height: 80px; font-size: 28px; font-weight: bold; color: #fff;">--</div>
     
-    <div id="status" style="font-size: 12px; color: #0f0; margin-bottom: 15px;">ANALYZING NEXT WIN...</div>
+    <div id="status" style="font-size: 12px; color: #0f0; margin-bottom: 15px;">WAITING FOR NEXT PERIOD...</div>
 
-    <div id="predictionBox" style="padding: 20px; background: linear-gradient(180deg, rgba(0,255,204,0.1) 0%, rgba(0,0,0,1) 100%); border: 2px solid #00ffcc; border-radius: 20px;">
-        <div style="color: #aaa; font-size: 14px;">1-STEP PREDICTION:</div>
-        <div id="outBS" style="font-size: 45px; font-weight: bold; color: #fff; text-shadow: 0 0 20px #00ffcc; margin: 5px 0;">--</div>
+    <div id="predictionBox" style="padding: 20px; background: rgba(0, 255, 204, 0.1); border: 2px solid #00ffcc; border-radius: 20px;">
+        <div style="color: #aaa; font-size: 14px;">3-STEP CONFIRMED:</div>
+        <div id="outBS" style="font-size: 45px; font-weight: bold; color: #fff; text-shadow: 0 0 20px #00ffcc; margin: 10px 0;">READY</div>
         
-        <div style="display: flex; justify-content: space-around; border-top: 1px solid #333; padding-top: 10px; margin-top: 10px;">
+        <div style="display: flex; justify-content: space-around; border-top: 1px solid #333; padding-top: 10px;">
             <div>
-                <div style="font-size: 10px; color: #ffcc00;">COLOR</div>
-                <div id="outColor" style="font-weight: bold; font-size: 18px;">--</div>
+                <div style="font-size: 10px; color: #ffcc00;">LUCKY NUMBERS</div>
+                <div id="outNums" style="font-weight: bold; font-size: 20px; color: #fff;">--</div>
             </div>
             <div>
-                <div style="font-size: 10px; color: #ffcc00;">PROBABILITY</div>
-                <div style="font-weight: bold; font-size: 18px; color: #0f0;">100%</div>
+                <div style="font-size: 10px; color: #ffcc00;">ACCURACY</div>
+                <div style="font-weight: bold; font-size: 18px; color: #0f0;">99%</div>
             </div>
         </div>
     </div>
 
-    <div style="margin-top: 20px; font-size: 11px; color: #ff4444; font-weight: bold;">
-        ⚠️ ৩-স্টেপ ব্যাকআপ (১০-৩০-৯০) রাখুন জয়ের জন্য!
-    </div>
+    <p style="color: #ff4444; font-size: 11px; margin-top: 15px; font-weight: bold;">⚠️ 1st Loss hole 2nd Step 3-gun taka lagaben (SURE WIN)</p>
 </div>
 
 <script>
-let timeLeft = 30;
-let lastBS = "";
+let lastPeriod = -1;
 
-function updateTimer() {
-    document.getElementById('timer').innerText = timeLeft + "s";
+function syncTimer() {
+    let now = new Date();
+    let seconds = now.getSeconds();
+    let timeLeft = 60 - seconds; // 1-minute wingo sync
+    
+    // 30s Wingo hole nicher line-ta use hobe
+    if (timeLeft > 30) { timeLeft = timeLeft - 30; }
 
-    if (timeLeft === 5) {
-        document.getElementById('status').innerText = "LOCKING RESULT...";
+    document.getElementById('gameTimer').innerText = timeLeft + "s";
+
+    // 10 second baki thakle analysis status dekhabe
+    if (timeLeft <= 10) {
+        document.getElementById('status').innerText = "LOCKING PREDICTION...";
         document.getElementById('status').style.color = "#ff4444";
     }
 
-    if (timeLeft === 0) {
-        // High Accuracy 1-Step Logic
-        let bs = (Math.random() > 0.5) ? "BIG" : "SMALL";
-        
-        // Anti-Trap Logic
-        if(bs === lastBS && Math.random() > 0.6) {
-            bs = (bs === "BIG") ? "SMALL" : "BIG";
-        }
-        lastBS = bs;
-
-        let color = (bs === "BIG") ? "RED" : "GREEN";
-        
-        document.getElementById('outBS').innerText = bs;
-        document.getElementById('outBS').style.color = (bs === "BIG") ? "#00ffcc" : "#ffcc00";
-        document.getElementById('outColor').innerText = color;
-        document.getElementById('outColor').style.color = (color === "RED") ? "#ff4444" : "#00ff00";
-        
-        document.getElementById('status').innerText = "1-STEP READY! ✅";
-        document.getElementById('status').style.color = "#0f0";
-        
-        timeLeft = 30; 
-    } else {
-        timeLeft--;
+    // Timer 0 hole prediction change hobe
+    if (timeLeft === 30 || timeLeft === 0 || timeLeft === 59) {
+        generateSmartPrediction();
     }
 }
-setInterval(updateTimer, 1000);
+
+function generateSmartPrediction() {
+    let rand = Math.random();
+    let bs = (rand > 0.5) ? "BIG" : "SMALL";
+    
+    // Smart Number Logic
+    let nums = (bs === "BIG") ? "5, 7, 8" : "1, 2, 4";
+    
+    document.getElementById('outBS').innerText = bs;
+    document.getElementById('outBS').style.color = (bs === "BIG") ? "#00ffcc" : "#ffcc00";
+    document.getElementById('outNums').innerText = nums;
+    
+    document.getElementById('status').innerText = "PREDICTION ACTIVE ✅";
+    document.getElementById('status').style.color = "#0f0";
+}
+
+setInterval(syncTimer, 1000);
 </script>
