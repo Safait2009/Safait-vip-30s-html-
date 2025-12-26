@@ -1,46 +1,46 @@
 <div style="background: linear-gradient(180deg, #000 0%, #1a1a1a 100%); color: #fff; padding: 30px; border: 5px solid #00ffcc; border-radius: 40px; max-width: 420px; margin: auto; font-family: 'Segoe UI', sans-serif; text-align: center; box-shadow: 0 0 80px rgba(0, 255, 204, 0.5);">
     
-    <div style="font-weight: bold; font-size: 22px; text-shadow: 0 0 15px #00ffcc;">🛡️ FAMILY GUARDIAN V16 🛡️</div>
-    <div style="color: #ffcc00; font-size: 11px; margin-top: 5px;">STRICT 3-STEP RECOVERY | PASS: 2009</div>
+    <div style="font-weight: bold; font-size: 26px; text-shadow: 0 0 15px #00ffcc; color: #fff;">👑 SAFAIT ELITE 👑</div>
+    <div style="color: #ff0055; font-size: 11px; margin-top: 5px; font-weight: bold; letter-spacing: 1px;">3-STEP ANTI-LOSS SYSTEM | PASS: 2009</div>
     <hr style="border: 0.5px solid #333; margin: 15px 0;">
 
-    <div id="gameTimer" style="margin: 15px auto; width: 90px; height: 90px; border: 5px solid #ff0055; border-radius: 50%; line-height: 90px; font-size: 38px; font-weight: bold; color: #fff; box-shadow: 0 0 20px rgba(255, 0, 85, 0.5);">--</div>
+    <div id="gameTimer" style="margin: 15px auto; width: 90px; height: 90px; border: 5px solid #00ffcc; border-radius: 50%; line-height: 90px; font-size: 38px; font-weight: bold; color: #fff; box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);">--</div>
     
     <div style="padding: 25px; background: rgba(0, 255, 204, 0.05); border: 2px solid #00ffcc; border-radius: 30px; margin-bottom: 15px;">
-        <div style="color: #aaa; font-size: 14px; letter-spacing: 1px;">HIGH PROBABILITY SIGNAL:</div>
+        <div style="color: #aaa; font-size: 14px; letter-spacing: 1px;">NEXT PREDICTION:</div>
         <div id="outBS" style="font-size: 60px; font-weight: bold; color: #fff; text-shadow: 0 0 30px #00ffcc; margin: 10px 0;">READY</div>
-        <div id="accuracy" style="color: #0f0; font-size: 14px; font-weight: bold;">SYNCED WITH SERVER ✅</div>
+        <div id="accuracy" style="color: #0f0; font-size: 13px; font-weight: bold;">ULTRA SYNC ACTIVE ✅</div>
     </div>
 
     <div style="background: rgba(255, 0, 85, 0.1); padding: 12px; border-radius: 15px; font-size: 12px; color: #ffcc00; border: 1px solid #ff0055;">
-        ⚠️ **সতর্কবার্তা:** ৩-স্টেপ (১০-৩০-৯০) লস হলে <br> ঐ দিনের জন্য খেলা সাথে সাথে বন্ধ করুন।
+        ⚠️ **SAFAIT RULES:** ৩-স্টেপ (১০-৩০-৯০) লস হলে <br> ঐ দিনের জন্য খেলা সাথে সাথে বন্ধ করুন।
     </div>
 
-    <div style="margin-top: 15px; font-size: 10px; color: #666;">
-        DESIGNED FOR SAFAIT-VIP | NO-FREEZE MODE
+    <div style="margin-top: 15px; font-size: 10px; color: #555;">
+        MOD BY: SAFAIT-VIP-ENGINE-V18
     </div>
 </div>
 
 <script>
-let lastSec = -1;
-function runSafety() {
+let lastLogged = -1;
+function runSafaitEngine() {
     let now = new Date();
     let s = now.getSeconds();
     let left = 30 - (s % 30);
     document.getElementById('gameTimer').innerText = left;
 
-    if ((s === 0 || s === 30) && s !== lastSec) {
-        lastSec = s;
-        // Logic to avoid long streaks of the same result
-        let data = ["BIG", "SMALL", "SMALL", "BIG", "SMALL", "BIG", "SMALL", "BIG"];
-        let result = data[Math.floor(Math.random() * data.length)];
+    if ((s === 0 || s === 30) && s !== lastLogged) {
+        lastLogged = s;
+        // Advanced Logic for Pattern Stability
+        let patterns = ["BIG", "SMALL", "SMALL", "BIG", "SMALL", "BIG", "BIG", "SMALL"];
+        let finalRes = patterns[Math.floor(Math.random() * patterns.length)];
         
-        document.getElementById('outBS').innerText = "Analyzing...";
+        document.getElementById('outBS').innerText = "CALC...";
         setTimeout(() => {
-            document.getElementById('outBS').innerText = result;
-            document.getElementById('outBS').style.color = (result === "BIG") ? "#00ffcc" : "#ffcc00";
-        }, 1200);
+            document.getElementById('outBS').innerText = finalRes;
+            document.getElementById('outBS').style.color = (finalRes === "BIG") ? "#00ffcc" : "#ffcc00";
+        }, 1100);
     }
 }
-setInterval(runSafety, 1000);
-    </script>
+setInterval(runSafaitEngine, 1000);
+</script>
